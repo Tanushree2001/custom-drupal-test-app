@@ -1,0 +1,15 @@
+signin_form.formdemo:
+  path: '/signinform'
+  defaults:
+    _form: '\Drupal\signin_form\Form\SignInForm'
+    _title: 'SignIn to this Event (demo)'
+  requirements:
+    _permission: 'access content' 
+
+signin_form.formmdemmo:
+  path: '/signup'
+  defaults:
+    _form: '\Drupal\signin_form\Form\SignUpForm'
+    _title: 'SignUp to this Event (demo)'
+  requirements:
+    _permission: 'access content'

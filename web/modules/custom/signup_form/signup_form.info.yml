@@ -1,0 +1,5 @@
+name: 'SignUp Form'
+type: module
+core_version_requirement: ^10
+description: 'Allows users to RSVP for Events.' 
+package: 'Sign In'

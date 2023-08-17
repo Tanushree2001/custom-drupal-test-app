@@ -1,0 +1,4 @@
+name: custom-drupal-test-app
+recipe: drupal10
+config:
+  webroot: web
