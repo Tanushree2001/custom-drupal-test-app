@@ -1,0 +1,42 @@
+uuid: c8990c9a-2f4b-4c0b-b4af-bf628ab0d859
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.active_students
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - bootstrap
+id: views_block__active_students_block_1
+theme: bootstrap
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:active_students-block_1'
+settings:
+  id: 'views_block:active_students-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+      student: student
+      academic_head: academic_head

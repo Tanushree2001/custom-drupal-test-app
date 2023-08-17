@@ -1,0 +1,38 @@
+uuid: cd3ca335-bead-4e94-94a7-4e8ec1cdc47e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.assignments.body
+    - field.field.node.assignments.field_assignments_title
+    - field.field.node.assignments.field_due_date
+    - field.field.node.assignments.field_file
+    - field.field.node.assignments.field_stream
+    - node.type.assignments
+  module:
+    - text
+    - user
+id: node.assignments.teaser
+targetEntityType: node
+bundle: assignments
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_assignments_title: true
+  field_due_date: true
+  field_file: true
+  field_stream: true

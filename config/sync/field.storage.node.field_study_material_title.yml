@@ -1,0 +1,21 @@
+uuid: afd90b29-f195-4228-9985-f432bf27f6f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_study_material_title
+field_name: field_study_material_title
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

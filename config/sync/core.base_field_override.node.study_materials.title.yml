@@ -1,0 +1,18 @@
+uuid: d846eff0-14fe-433b-9136-ecf49dde8a8a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.study_materials
+id: node.study_materials.title
+field_name: title
+entity_type: node
+bundle: study_materials
+label: 'Study Materials'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

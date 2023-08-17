@@ -1,0 +1,18 @@
+uuid: ac7b86eb-41af-405a-92b5-b7fee273900a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.assignments
+id: node.assignments.title
+field_name: title
+entity_type: node
+bundle: assignments
+label: Assignments
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,29 @@
+uuid: 7127fdd5-2754-415b-9f23-b9c22411a1b4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_stream
+    - node.type.subjects
+    - taxonomy.vocabulary.streams
+id: node.subjects.field_stream
+field_name: field_stream
+entity_type: node
+bundle: subjects
+label: Stream
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      streams: streams
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

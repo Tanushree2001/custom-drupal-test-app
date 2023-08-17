@@ -1,0 +1,17 @@
+uuid: 7f05c1a3-6537-41ae-b774-65e4b642e4ab
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Notices
+type: notices
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false
