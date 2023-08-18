@@ -1,0 +1,18 @@
+uuid: abaeecc3-2a42-456f-b33f-1a427eb6d56a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.subjects
+id: node.subjects.title
+field_name: title
+entity_type: node
+bundle: subjects
+label: Subjects
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

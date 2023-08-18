@@ -1,0 +1,18 @@
+uuid: 4f762791-6f64-4d2d-9d2f-0bf59d8ab52e
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Assets
+type: assets
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

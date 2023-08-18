@@ -1,0 +1,23 @@
+uuid: 2a56e357-8a34-4e5a-b7af-709c8a2d5dea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.assignments
+  module:
+    - text
+id: node.assignments.body
+field_name: body
+entity_type: node
+bundle: assignments
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,19 @@
+uuid: b60eaa2d-2d3c-4dd7-b326-374321a20de4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_study_material_title
+    - node.type.study_materials
+id: node.study_materials.field_study_material_title
+field_name: field_study_material_title
+entity_type: node
+bundle: study_materials
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

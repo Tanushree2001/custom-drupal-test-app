@@ -1,0 +1,79 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+// /**
+//  * Implements hook_cron().
+//  */
+// function student_role_cleanup_cron() {
+//   $six_months_ago = strtotime('-6 months');
+//   $entity_type_manager = \Drupal::entityTypeManager();
+//   $user_storage = $entity_type_manager->getStorage('user');
+
+//   // Load user entities of students who joined more than 6 months ago
+//   $query = $user_storage->getQuery()
+//     ->condition('status', 1) // Only active users
+//     ->condition('roles', 'Student') // Users with the 'student' role
+//     ->condition('field_joining_year', $six_months_ago, '<');
+
+//   $uids_to_update = $query->execute();
+
+//   // Remove the 'student' role from selected user entities
+//   if (!empty($uids_to_update)) {
+//     foreach ($uids_to_update as $uid) {
+//       $user = $user_storage->load($uid);
+//       $user->removeRole('Student');
+//       $user->save();
+//     }
+//   }
+// }
+
+
+// /**
+//  * Implements hook_cron().
+//  */
+// function cleanup_data_cron() {
+//   // Get the current timestamp.
+//   $current_time = \Drupal::time()->getRequestTime();
+
+//   // Load the "notices" content type.
+//   $query = \Drupal::entityQuery('node')
+//     ->condition('type', 'notices')
+//     ->condition('status', 1); // Only published nodes
+
+//   $nids = $query->execute();
+
+//   foreach ($nids as $nid) {
+//     // Load each notice node.
+//     $node = \Drupal\node\Entity\Node::load($nid);
+
+//     // Get the event date from the field_published field.
+//     $event_date = $node->get('field_published')->value;
+
+//     // Compare the event date with the current time.
+//     if (strtotime($event_date) < $current_time) {
+//       // Delete the notice node.
+//       $node->delete();
+//     }
+//   }
+// }
+/**
+ * Implements hook_cron().
+ */
+function notice_cleanup_cron() {
+  // Get the current timestamp.
+  $current_time = \Drupal::time()->getRequestTime();
+
+  // Query the node_field_published table to get notices with past event dates.
+  $query = \Drupal::database()->select('node__field_published', 'nfp')
+    ->fields('nfp', ['entity_id', 'field_published__value'])
+    ->condition('nfp.field_published__value', $current_time, '<')
+    ->execute();
+
+  foreach ($query as $row) {
+    // Load and delete each notice node.
+    if ($node = \Drupal\node\Entity\Node::load($row->entity_id)) {
+      $node->delete();
+    }
+  }
+}

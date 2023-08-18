@@ -1,0 +1,30 @@
+uuid: 45c56de2-0b64-4d06-b573-152fd4067d95
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.assets
+    - node.type.assignments
+    - node.type.notices
+    - node.type.study_materials
+    - node.type.subjects
+  module:
+    - node
+    - system
+id: academic_head
+label: 'Academic Head'
+weight: 5
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'create assets content'
+  - 'create assignments content'
+  - 'create notices content'
+  - 'create study_materials content'
+  - 'create subjects content'
+  - 'edit any assets content'
+  - 'edit any assignments content'
+  - 'edit any notices content'
+  - 'edit any study_materials content'
+  - 'edit any subjects content'

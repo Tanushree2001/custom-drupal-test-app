@@ -1,0 +1,42 @@
+uuid: e81f6edf-6dde-4a21-bcd2-1004fd4ebb62
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest_notices
+  module:
+    - system
+    - user
+    - views
+  theme:
+    - bootstrap
+id: views_block__latest_notices_block_1
+theme: bootstrap
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:latest_notices-block_1'
+settings:
+  id: 'views_block:latest_notices-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+      student: student
+      academic_head: academic_head

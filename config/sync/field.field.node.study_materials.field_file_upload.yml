@@ -1,0 +1,27 @@
+uuid: f8feb40e-6652-463b-83fc-e19e7eb019cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_upload
+    - node.type.study_materials
+  module:
+    - file
+id: node.study_materials.field_file_upload
+field_name: field_file_upload
+entity_type: node
+bundle: study_materials
+label: 'File upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg png'
+  max_filesize: ''
+  description_field: false
+field_type: file

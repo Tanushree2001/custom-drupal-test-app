@@ -1,0 +1,18 @@
+uuid: f0a86c61-a966-4159-99d7-910138d40c15
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.assets
+id: node.assets.title
+field_name: title
+entity_type: node
+bundle: assets
+label: Assets
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

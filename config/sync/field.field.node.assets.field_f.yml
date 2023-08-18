@@ -1,0 +1,27 @@
+uuid: 136c957b-50be-4ba3-84c0-229bdab931d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_f
+    - node.type.assets
+  module:
+    - file
+id: node.assets.field_f
+field_name: field_f
+entity_type: node
+bundle: assets
+label: 'File upload'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'jpg png'
+  max_filesize: ''
+  description_field: false
+field_type: file

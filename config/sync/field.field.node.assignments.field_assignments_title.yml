@@ -1,0 +1,19 @@
+uuid: 1b6616c4-0392-43e9-b3b8-ec36adda0d06
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assignments_title
+    - node.type.assignments
+id: node.assignments.field_assignments_title
+field_name: field_assignments_title
+entity_type: node
+bundle: assignments
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

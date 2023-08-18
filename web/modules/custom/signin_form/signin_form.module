@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Custom module for handling sign-in and student information.
+ */
+
+/**
+ * Implements hook_theme() to define a theme function.
+ */
+function signin_form_theme() {
+  return [
+    'inactive_students_table' => [
+      'variables' => [
+        'header' => [],
+        'rows' => [],
+        'count' => 0,
+      ],
+    ],
+  ];
+}
