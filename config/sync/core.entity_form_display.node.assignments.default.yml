@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.assignments.body
+    - field.field.node.assignments.field_assignment_subject
     - field.field.node.assignments.field_assignments_title
     - field.field.node.assignments.field_due_date
     - field.field.node.assignments.field_file
@@ -34,6 +35,16 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_assignment_subject:
+    type: entity_reference_autocomplete
+    weight: 126
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_assignments_title:
     type: string_textfield

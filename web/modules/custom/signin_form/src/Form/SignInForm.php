@@ -61,6 +61,19 @@
       '#description' => $this->t('Please enter your password.'),
     ];
 
+    // $form['send_otp'] = [
+    //   '#type' => 'submit',
+    //   '#value' => $this->t('Send OTP'),
+    //   '#submit' => ['::sendOTP'],
+    // ];
+
+    // Add OTP field.
+    $form['otp'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('One-Time Password'),
+      '#required' => TRUE,
+    ];
+
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('SignIn'),
@@ -110,4 +123,26 @@
     // $this->messenger()->addMessage("The form is working! You entered @entry.", ['@entry' => $submitted_email]);
     $this->messenger()->addMessage("The form is working!");
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  // public function sendOTP(array &$form, FormStateInterface $form_state) {
+  //   // Generate OTP.
+  //   $otp = mt_rand(100000, 999999);
+
+  //   // Store OTP in temporary storage.
+  //   // $temp_store = $this->tempStoreFactory->get('signin_form');
+  //   // $temp_store->set('otp', $otp);
+
+  //   // Send email containing OTP using SMTP.
+  //   $to = $form_state->getValue('email'); // Replace with actual email field.
+  //   $subject = $this->t('Your OTP');
+  //   $body = $this->t('Your OTP is: @otp', ['@otp' => $otp]);
+  //   $params = [
+  //     'subject' => $subject,
+  //     'body' => $body,
+  //   ];
+  //   \Drupal::service('plugin.manager.mail')->mail('your_module_name', 'otp', $to, \Drupal::languageManager()->getDefaultLanguage()->getId(), $params, NULL, TRUE);
+  // }
  }

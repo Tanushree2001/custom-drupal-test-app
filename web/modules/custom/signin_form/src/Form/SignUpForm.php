@@ -63,6 +63,12 @@
       '#required' => TRUE,
     ];
 
+    $form['stream'] = [
+      '#type' => 'textfield', // You can change this to a select field if needed
+      '#title' => $this->t('Stream'),
+      '#required' => TRUE,
+    ];
+
     $form['joining_year'] = [
         '#type' => 'textfield',
         '#title' => $this->t('Joining Year'),
@@ -126,8 +132,66 @@
    */
   public function submitForm(array &$form, FormStateInterface $form_state)
   {
-    // $submitted_email = $form_state->getValue('email');
+    $submitted_email = $form_state->getValue('email');
     // $this->messenger()->addMessage("The form is working! You entered @entry.", ['@entry' => $submitted_email]);
     $this->messenger()->addMessage("The form is working!");
+    try {
+      //Begin phase 1: Initiate variable to save
+      //Get current user id
+
+      $uid = \Drupal::currentUser()->id();
+
+      //Demonstration for how to load a full user object of the current user.
+      //this $full_user variable is not needed in this code.
+      // but it shown for demonstration purposes.
+      $full_user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+
+      //Obtain value as entered in the form
+      $nid = $form_state->getValue('nid');
+      $email = $form_state->getValue('email');
+      $fullname = $form_state->getValue('full_name');
+      $stream = $form_state->getValue('stream');
+      $joiningyear = $form_state->getValue('joining_year');
+
+      $current_time = \Drupal::time()->getRequestTime();
+      //End Phase 1
+
+      // Begin Phase 2: Save the values to the database
+
+      // Start to build a query builder object $query.
+      $query = \Drupal::database()->insert('signin_form');
+
+      //Specify the fields that the query will insert into.
+      $query->fields([
+        'uid',
+        'nid',
+        'full_name',
+        'stream',
+        'joining_year',
+        'mail',
+        'created',
+      ]);
+
+      //Set the values of the fields we selected.
+      // Note that they must be in the same order as we defined them.
+      // in the $query->fields([....]) above.
+      $query->values([
+        $uid,
+        $nid,
+        $fullname,
+        $stream,
+        $joiningyear,
+        $email,
+        $current_time,
+      ]);
+
+      //Execute the query!
+      // Drupal handles the exact syntax of the query automatically!
+      $query->execute();
+      // End Phase 2
+    }
+    catch(\Exception $e) {
+      \Drupal::messenger()->addError('Unable to save Signup form settings at this time due to database error. Please try again');
+    }
   }
  }

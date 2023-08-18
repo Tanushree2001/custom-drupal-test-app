@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.assets.field_assets_title
     - field.field.node.assets.field_f
     - field.field.node.assets.field_stream
+    - field.field.node.assets.field_subject
     - node.type.assets
   module:
     - file
@@ -48,9 +49,18 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  field_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

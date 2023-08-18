@@ -7,6 +7,7 @@ dependencies:
     - node.type.assignments
     - node.type.notices
     - node.type.study_materials
+    - node.type.subjects
   module:
     - node
     - system
@@ -21,7 +22,9 @@ permissions:
   - 'create assignments content'
   - 'create notices content'
   - 'create study_materials content'
+  - 'create subjects content'
   - 'edit any assets content'
   - 'edit any assignments content'
   - 'edit any notices content'
   - 'edit any study_materials content'
+  - 'edit any subjects content'

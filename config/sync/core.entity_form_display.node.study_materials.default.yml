@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.study_materials.body
     - field.field.node.study_materials.field_file_upload
     - field.field.node.study_materials.field_stream
+    - field.field.node.study_materials.field_study_material_subject
     - field.field.node.study_materials.field_study_material_title
     - node.type.study_materials
   module:
@@ -43,6 +44,16 @@ content:
   field_stream:
     type: entity_reference_autocomplete
     weight: 124
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_study_material_subject:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

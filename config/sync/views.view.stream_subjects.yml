@@ -200,6 +200,7 @@ display:
       menu:
         type: normal
         title: 'Stream Subjects'
+        weight: -49
         menu_name: main
         parent: ''
     cache_metadata:

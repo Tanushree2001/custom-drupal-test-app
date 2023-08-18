@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.assignments.body
+    - field.field.node.assignments.field_assignment_subject
     - field.field.node.assignments.field_assignments_title
     - field.field.node.assignments.field_due_date
     - field.field.node.assignments.field_file
@@ -25,6 +26,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_assignment_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_assignments_title:
     type: string
@@ -64,4 +73,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,8 @@
+name: 'Cleanup Data'
+type: module
+description: 'Automatically deletes old data as per requirements.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user
+version: 1.0

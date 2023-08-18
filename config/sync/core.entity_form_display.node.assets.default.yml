@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.assets.field_assets_title
     - field.field.node.assets.field_f
     - field.field.node.assets.field_stream
+    - field.field.node.assets.field_subject
     - node.type.assets
   module:
     - file
@@ -51,6 +52,16 @@ content:
   field_stream:
     type: entity_reference_autocomplete
     weight: 124
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_subject:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

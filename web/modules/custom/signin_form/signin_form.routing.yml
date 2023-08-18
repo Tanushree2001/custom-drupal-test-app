@@ -13,3 +13,28 @@ signin_form.formmdemmo:
     _title: 'SignUp to this Event (demo)'
   requirements:
     _permission: 'access content'
+
+signin_form.inactive_students:
+  path: '/inactive-students'
+  defaults:
+    _controller: '\Drupal\signin_form\Controller\InactiveStudentsController::getInactiveStudents'
+    _title: 'Inactive Students'
+  requirements:
+    _permission: 'access content'  
+
+signin_form.api_students:
+  path: '/api/students'
+  defaults:
+    _controller: '\Drupal\signin_form\Controller\ApiController::listStudents'
+    _format: json
+  methods: [GET]
+  requirements:
+    _permission: 'access content'
+
+signin_form.filter_data:
+  path: '/signin-form/filter-data/{year}/{month}'
+  defaults:
+    _controller: '\Drupal\signin_form\Controller\FilterController::filterData'
+    _title: 'Filter Data'
+  requirements:
+    _permission: 'access content'  

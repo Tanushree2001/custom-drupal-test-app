@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.study_materials.body
     - field.field.node.study_materials.field_file_upload
     - field.field.node.study_materials.field_stream
+    - field.field.node.study_materials.field_study_material_subject
     - field.field.node.study_materials.field_study_material_title
     - node.type.study_materials
   module:
@@ -40,6 +41,14 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  field_study_material_subject:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
   field_study_material_title:
     type: string
     label: above
@@ -53,4 +62,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

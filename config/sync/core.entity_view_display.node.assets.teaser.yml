@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.assets.field_assets_title
     - field.field.node.assets.field_f
     - field.field.node.assets.field_stream
+    - field.field.node.assets.field_subject
     - node.type.assets
   module:
     - text
@@ -34,3 +35,5 @@ hidden:
   field_assets_title: true
   field_f: true
   field_stream: true
+  field_subject: true
+  search_api_excerpt: true
